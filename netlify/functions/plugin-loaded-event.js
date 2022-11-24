@@ -16,10 +16,12 @@ export const handler = async (event, context) => {
     client.capture({
         distinctId: body.userId,
         event: 'PluginLoaded',
-        difficulty: body.difficulty,
-        version: body.version,
-        dynamicWorld: body.dynamicWorld,
-        persistDifficulty: body.persistDifficulty,
+        properties: {
+            difficulty: body.difficulty,
+            version: body.version,
+            dynamicWorld: body.dynamicWorld,
+            persistDifficulty: body.persistDifficulty,
+        },
     })
 
     client.shutdown();
