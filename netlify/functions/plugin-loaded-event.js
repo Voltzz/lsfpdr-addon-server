@@ -18,6 +18,8 @@ export const handler = async (event, context) => {
         persistDifficulty: body.persistDifficulty,
     })
 
+    client.shutdown();
+
     return {
         statusCode: 200,
         body: JSON.stringify({}),
