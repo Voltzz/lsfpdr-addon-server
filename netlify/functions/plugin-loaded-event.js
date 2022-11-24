@@ -13,6 +13,8 @@ export const handler = async (event, context) => {
         }
     )
 
+    console.log("[Plugin Loaded] Connected")
+
     client.capture({
         distinctId: body.userId,
         event: 'PluginLoaded',
@@ -23,6 +25,8 @@ export const handler = async (event, context) => {
             persistDifficulty: body.persistDifficulty,
         },
     })
+
+    console.log("[Plugin Loaded] Sent event")
 
     client.shutdown();
 
