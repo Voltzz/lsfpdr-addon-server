@@ -26,6 +26,7 @@ export const handler = async (event, context) => {
             mission: body.mission,
             sessionId: body.sessionId,
             success: body.success,
+            reason: body.reason,
         },
     })
 
