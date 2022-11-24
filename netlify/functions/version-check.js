@@ -9,5 +9,8 @@ export const handler = async (event, context) => {
         body: JSON.stringify({
             updateRequired: updatedRequired,
         }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
     }
 }
