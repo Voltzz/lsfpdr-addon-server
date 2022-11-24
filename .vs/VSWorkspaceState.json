@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\netlify",
+    "\\netlify\\functions",
+    "\\public"
   ],
-  "SelectedNode": "\\C:\\Users\\voltz\\Documents\\lsfpdr\\server",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
