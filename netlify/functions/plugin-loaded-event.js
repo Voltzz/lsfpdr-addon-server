@@ -6,7 +6,11 @@ export const handler = async (event, context) => {
 
     const client = new PostHog(
         'phc_Ae20eH6ZukSpndSBBaxx6odHM5HDZYmguBRXA0Fo5da',
-        { host: 'https://app.posthog.com' }
+        {
+            host: 'https://app.posthog.com',
+            flushAt: 1,
+            flushInterval: 0,
+        }
     )
 
     client.capture({
