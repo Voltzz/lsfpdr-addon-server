@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Voltzz/lsfpdr-addon-server#readme",
   "devDependencies": {
     "node-fetch": "^3.3.0"
+  },
+  "dependencies": {
+    "posthog-node": "^2.2.0"
   }
 }
