@@ -1,34 +1,21 @@
-import { PostHog } from 'posthog-node'
-
 export const handler = async (event, context) => {
     const body = JSON.parse(event.body)
     console.log("[Plugin Loaded] Request received")
 
-    const client = new PostHog(
-        'phc_Ae20eH6ZukSpndSBBaxx6odHM5HDZYmguBRXA0Fo5da',
-        {
-            host: 'https://app.posthog.com',
-            flushAt: 1,
-            flushInterval: 0,
-        }
-    )
+    var Mixpanel = require('mixpanel');
+    var mixpanel = Mixpanel.init('62cdb58f3aa78610853e39b74ba7c8a2');
 
     console.log("[Plugin Loaded] Connected")
 
-    client.capture({
-        distinctId: body.userId,
-        event: 'PluginLoaded',
-        properties: {
-            difficulty: body.difficulty,
-            version: body.version,
-            dynamicWorld: body.dynamicWorld,
-            persistDifficulty: body.persistDifficulty,
-        },
+    mixpanel.track('PluginLoaded', {
+        distinct_id: body.userId,
+        difficulty: body.difficulty,
+        version: body.version,
+        dynamic_world: body.dynamicWorld,
+        persist_difficulty: body.persistDifficulty,
     })
 
     console.log("[Plugin Loaded] Sent event")
-
-    client.shutdown()
 
     return {
         statusCode: 200,
