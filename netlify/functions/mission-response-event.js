@@ -31,6 +31,8 @@ export const handler = async (event, context) => {
 
     console.log("[Mission Response] Sent event")
 
+    client.shutdown()
+
     return {
         statusCode: 200,
         body: JSON.stringify({}),
