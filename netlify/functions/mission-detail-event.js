@@ -2,12 +2,9 @@ export const handler = async (event, context) => {
     const body = JSON.parse(event.body)
     console.log("[Mission Detail] Request received")
 
-    var Mixpanel = require('mixpanel');
-    var mixpanel = Mixpanel.init('62cdb58f3aa78610853e39b74ba7c8a2');
+    const mixpanel = require('../helper/mixpanel-wrapper.js');
 
-    console.log("[Mission Detail] Connected")
-
-    mixpanel.track('MissionDetail', {
+    await mixpanel.track('MissionDetail', {
         distinct_id: body.userId,
         difficulty: body.difficulty,
         version: body.version,
