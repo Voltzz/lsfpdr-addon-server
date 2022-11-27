@@ -5,6 +5,6 @@
     "\\netlify\\functions",
     "\\public"
   ],
-  "SelectedNode": "\\netlify\\functions\\mission-outcome-event.js",
+  "SelectedNode": "\\netlify\\functions\\plugin-loaded-event.js",
   "PreviewInSolutionExplorer": false
 }
